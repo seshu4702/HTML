@@ -64,9 +64,26 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
 
-    <center><input type="submit" value="Login"></center>
+    <center><input type="submit" value="Login" onclick="login()"></center>
   </form>
 </div>
+<script>
+    const login = () => {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
+    if (isValidPassword(password)) {
+        alert("Password is valid");
+    } else {
+        alert("Invalid password");
+    }
+}
+
+
+const isValidPassword = (password) => {
+    
+    return password.length >= 6;
+}
+</script>
 </body>
 </html>
